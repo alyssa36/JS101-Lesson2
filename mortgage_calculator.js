@@ -14,7 +14,7 @@ function invalidInterest(input) {
   return (input.trimStart() === '' ||
           Number.isNaN(Number(input)) ||
           input < 0 ||
-          input >= 50)
+          input >= 50);
 }
 
 function calculateMonthlyPayment(loanAmount, interestMonthly, lengthInMonths) {
@@ -79,22 +79,22 @@ while (true) {
 
   //Convert interest and length values to work in the formula
   let lengthInMonths = lengthInYears * 12;
-  let interestMonthly = interestAnnual                                                                                                                                                                                                                / 100 / 12;
-  
+  let interestMonthly = interestAnnual / 100 / 12;
+
   //Calculate the monthly payment
   let payment = calculateMonthlyPayment(loanAmount, interestMonthly,
     lengthInMonths).toFixed(2);
 
   print(`\nThe monthly payment for this loan is $${payment}.`);
   print('\nWould you like to do another calculation? Enter y/n');
-  
+
   //Get answer about another calculation and determine if valid y/n input
   let calculateMoreAnswer = readline.prompt().toLowerCase();
-  
+
   while (checkInput(calculateMoreAnswer) === 'bad input') {
     print(`\nPlease type yes to do another calculation or no to quit.`);
     calculateMoreAnswer = readline.prompt().toLowerCase();
-  } 
+  }
   if (checkInput(calculateMoreAnswer) === false) {
     break;
   } else {
