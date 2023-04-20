@@ -102,6 +102,3 @@ while (true) {
   }
 }
 print('\nThanks for using Mortgage Calculator!');
-
-
-//Add function for looping with y/n input more specifically defined
