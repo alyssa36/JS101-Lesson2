@@ -4,12 +4,15 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-
 prompt('Welcome to Calculator!');
 
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
+
+let newCalc = true;
+while (newCalc) {
+
 
 prompt("What's the first number?");
 let number1 = readline.question();
@@ -52,3 +55,9 @@ switch (operation) {
 }
 
 prompt(`The result is: ${output}.`);
+
+prompt('Would you like to do another calculation? y/n');
+newCalc = readline.question();
+if (newCalc !== 'y') {
+  newCalc = false;
+}}
