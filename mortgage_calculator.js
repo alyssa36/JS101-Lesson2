@@ -95,6 +95,7 @@ while (true) {
     print(`\nPlease type yes to do another calculation or no to quit.`);
     calculateMoreAnswer = readline.prompt().toLowerCase();
   }
+  
   if (checkInput(calculateMoreAnswer) === false) {
     break;
   } else {
